@@ -115,6 +115,11 @@ SERVICE_ACCOUNT_KEY
 ## Cloud SQL Configuration (optional)
 - external_database: *(optional)* When set to "true", a cloud SQL instance will be deployed for the Ops Manager and ERT.
 
+## Certificate Generation (optional)
+- cert_generation: *(optional)* When set to "true", a certificate will be generated for the Ops Manager and the ERT.
+- ca_cert: *(optional)* Root CA cert used to generate the certificate.
+- ca_key: *(optional)* Root CA key used to generate the certificate.
+
 #### Ops Manager
 - opsman_sql_db_host: *(optional)* The host the user can connect from. Can be an IP address. Changing this forces a new resource to be created.
 
