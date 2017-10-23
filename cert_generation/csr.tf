@@ -12,4 +12,6 @@ resource "tls_cert_request" "env_cert_request" {
     organization        = "Pivotal"
     organizational_unit = "RelEng"
   }
+
+  count = "${var.count}"
 }

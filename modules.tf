@@ -30,6 +30,8 @@ module "isolation_segment" {
 module "cert_generation" {
   source = "./cert_generation"
 
+  count = "${var.cert_generation ? 1 : 0}"
+
   env_name = "${var.env_name}"
   ca_key   = "${var.ca_key}"
   ca_cert  = "${var.ca_cert}"

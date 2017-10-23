@@ -11,4 +11,6 @@ resource "tls_locally_signed_cert" "env_cert" {
     "digital_signature",
     "server_auth",
   ]
+
+  count = "${var.count}"
 }

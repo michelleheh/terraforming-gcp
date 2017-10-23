@@ -125,6 +125,11 @@ variable "create_gcs_buckets" {
  * Cert Generation Options *
  ***************************/
 
+variable "cert_generation" {
+  description = "generate a certificate for Ops Manager signed by a root CA provided"
+  default     = false
+}
+
 variable "ca_key" {
   type        = "string"
   description = "Root CA private key"
