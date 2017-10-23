@@ -19,8 +19,8 @@ module "isolation_segment" {
   env_name = "${var.env_name}"
   zones    = "${var.zones}"
 
-  ssl_cert             = "${var.iso_seg_ssl_cert}"
-  ssl_cert_private_key = "${var.iso_seg_ssl_cert_private_key}"
+  ssl_cert             = "${var.cert_generation == true ? module.cert_generation.env_cert_pem : var.iso_seg_ssl_cert}"
+  ssl_cert_private_key = "${var.cert_generation == true ? module.cert_generation.env_private_key_pem : var.iso_seg_ssl_cert_private_key}"
 
   dns_zone_name           = "${google_dns_managed_zone.env_dns_zone.name}"
   dns_zone_dns_name       = "${google_dns_managed_zone.env_dns_zone.dns_name}"
