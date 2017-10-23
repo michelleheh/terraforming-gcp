@@ -11,19 +11,19 @@ variable "region" {
 }
 
 variable "management_cidr" {
-  type = "string"
+  type        = "string"
   description = "cidr for management subnet"
   default     = "10.0.0.0/24"
 }
 
 variable "ert_cidr" {
-  type = "string"
+  type        = "string"
   description = "cidr for ert subnet"
   default     = "10.0.4.0/24"
 }
 
 variable "services_cidr" {
-  type = "string"
+  type        = "string"
   description = "cidr for services subnet"
   default     = "10.0.8.0/24"
 }
@@ -119,4 +119,20 @@ variable "iso_seg_ssl_cert_private_key" {
 variable "create_gcs_buckets" {
   description = "create Google Storage Buckets for Elastic Runtime Cloud Controller's file storage"
   default     = true
+}
+
+/***************************
+ * Cert Generation Options *
+ ***************************/
+
+variable "ca_key" {
+  type        = "string"
+  description = "Root CA private key"
+  default     = ""
+}
+
+variable "ca_cert" {
+  type        = "string"
+  description = "Root CA certificate"
+  default     = ""
 }

@@ -26,3 +26,11 @@ module "isolation_segment" {
   dns_zone_dns_name       = "${google_dns_managed_zone.env_dns_zone.dns_name}"
   public_healthcheck_link = "${google_compute_http_health_check.cf-public.self_link}"
 }
+
+module "cert_generation" {
+  source = "./cert_generation"
+
+  env_name = "${var.env_name}"
+  ca_key   = "${var.ca_key}"
+  ca_cert  = "${var.ca_cert}"
+}

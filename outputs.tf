@@ -169,3 +169,11 @@ output "cf_ws_address" {
 output "dns_managed_zone" {
   value = "${google_dns_managed_zone.env_dns_zone.name}"
 }
+
+output "env_cert_pem" {
+  value = "${module.cert_generation.env_cert_pem}"
+}
+
+output "env_private_key_pem" {
+  value = "${module.cert_generation.env_private_key_pem}"
+}
