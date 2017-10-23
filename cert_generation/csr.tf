@@ -5,6 +5,7 @@ resource "tls_cert_request" "env_cert_request" {
   dns_names = [
     "*.apps.${var.env_name}.gcp.releng.cf-app.com",
     "*.sys.${var.env_name}.gcp.releng.cf-app.com",
+    "pcf-optional.${var.env_name}.gcp.releng.cf-app.com",
   ]
 
   subject {
